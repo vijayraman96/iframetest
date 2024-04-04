@@ -95,7 +95,7 @@
             const domainName  = "https://iframetest-ivory.vercel.app/";
             const productId = container.getAttribute('id'); 
             // Generate the iframe code
-            const src = `${domainName}${productId}`;
+            const src = `${domainName}#${productId}`;
             console.log('src', src);
             const iframeHTML = `<iframe src='${src}' style="width: 100%; height: 300px; border: 1px solid black;"></iframe>`;
 
