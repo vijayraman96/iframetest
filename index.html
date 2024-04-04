@@ -90,9 +90,10 @@
         function handleClipboardClick(event) {
             // Get the parent container of the clicked button
             const container = event.target.closest('.box_section');
+            console.log("container", container)
             if (!container) return; // Exit if no container found
             const domainName  = "https://iframetest-ivory.vercel.app/";
-            const productId = container.dataset.id; 
+            const productId = container.getAttibute.id; 
             // Generate the iframe code
             const src = `${domainName}${productId}`;
             console.log('src', src);
