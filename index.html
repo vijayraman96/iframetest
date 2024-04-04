@@ -97,7 +97,7 @@
             // Generate the iframe code
             const src = `${domainName}${productId}`;
             console.log('src', src);
-            const iframeHTML = `<iframe src=${src} style="width: 100%; height: 300px; border: 1px solid black;"></iframe>`;
+            const iframeHTML = `<iframe src='${src}' style="width: 100%; height: 300px; border: 1px solid black;"></iframe>`;
 
             // Copy the iframe code to the clipboard
             navigator.clipboard.writeText(iframeHTML)
