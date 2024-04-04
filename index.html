@@ -91,9 +91,12 @@
             // Get the parent container of the clicked button
             const container = event.target.closest('.box_section');
             if (!container) return; // Exit if no container found
-            const domainName  = "https://iframetest-ivory.vercel.app/"
+            const domainName  = "https://iframetest-ivory.vercel.app/";
+            const productId = container.dataset.buttonId; 
             // Generate the iframe code
-            const iframeHTML = `<iframe srcdoc='${container.outerHTML}' style="width: 100%; height: 300px; border: 1px solid black;"></iframe>`;
+            const src = `${domainName}/${productId}`;
+            console.log('src', src);
+            const iframeHTML = `<iframe src=' style="width: 100%; height: 300px; border: 1px solid black;"></iframe>`;
 
             // Copy the iframe code to the clipboard
             navigator.clipboard.writeText(iframeHTML)
