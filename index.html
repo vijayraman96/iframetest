@@ -31,131 +31,95 @@
         <button>Add to cart</button>
         <button class="clipboard">copy to clipboard</button> -->
     </div>
-    <div id="products">
-        <!-- Product 1 -->
-        <div class="product" data-id="1" id="1">
-            <h2>Black Shirt</h2>
-            <p>It's a Denim Shirt with size S</p>
-            <button class="embed-button">Get Embed Code</button>
-        </div>
-
-        <!-- Product 2 -->
-        <div class="product" data-id="2" id="2">
-            <h2>Blue Shirt</h2>
-            <p>It's a Denim Shirt with size M</p>
-            <button class="embed-button">Get Embed Code</button>
-        </div>
-
-        <!-- Add more products here -->
-    </div>
 
     <script>
-        // let arrayOfElements = [
-        //     {
-        //         title: 'Black Shirt',
-        //         para: 'Its is a Denim Shirt with size S',
-        //         buttonId: 1
-        //     },
-        //     {
-        //         title: 'Blue Shirt',
-        //         para: 'Its is a Polo Shirt with size M',
-        //         buttonId: 2
-        //     },
-        //     {
-        //         title: 'White Shirt',
-        //         para: 'Its is a Makerz Shirt with size L',
-        //         buttonId: 3
-        //     },
-        //     {
-        //         title: 'Yellow Shirt',
-        //         para: 'Its is a Salt Shirt with size XL',
-        //         buttonId: 4
-        //     },
-        //     {
-        //         title: 'Red Shirt',
-        //         para: 'Its is a Pincer Shirt with size XXL',
-        //         buttonId: 5
-        //     },
-        // ]
+        let arrayOfElements = [
+            {
+                title: 'Black Shirt',
+                para: 'Its is a Denim Shirt with size S',
+                buttonId: 1
+            },
+            {
+                title: 'Blue Shirt',
+                para: 'Its is a Polo Shirt with size M',
+                buttonId: 2
+            },
+            {
+                title: 'White Shirt',
+                para: 'Its is a Makerz Shirt with size L',
+                buttonId: 3
+            },
+            {
+                title: 'Yellow Shirt',
+                para: 'Its is a Salt Shirt with size XL',
+                buttonId: 4
+            },
+            {
+                title: 'Red Shirt',
+                para: 'Its is a Pincer Shirt with size XXL',
+                buttonId: 5
+            },
+        ]
 
-        // // const boxSection = document.querySelector(".box_section");
         // const boxSection = document.querySelector(".box_section");
-        // arrayOfElements.forEach(item => {
-        //     // Create a div element
-        //     const div = document.createElement('div');
-        //     div.classList.add('box_section');
-        //     div.style.border = '2px solid skyblue';
-        //     div.style.padding = '10px';
-        //     div.style.margin = '10px';
-        //     div.style.width = '400px';
-        //     div.style.height = '200px';
-        //     div.style.textAlign = 'center';
+        const boxSection = document.querySelector(".box_section");
+        arrayOfElements.forEach(item => {
+            // Create a div element
+            const div = document.createElement('div');
+            div.classList.add('box_section');
+            div.style.border = '2px solid skyblue';
+            div.style.padding = '10px';
+            div.style.margin = '10px';
+            div.style.width = '400px';
+            div.style.height = '200px';
+            div.style.textAlign = 'center';
 
-        //     // Create the inner HTML string with properly escaped quotes
-        //     const innerHTML = `
-        //         <h2><b>Title:</b> ${item.title}</h2>
-        //         <p class='para'>${item.para}</p>
-        //         <img src='https://picsum.photos/200' style='width: 50px; height: 50px' style='text-align: center' />
-        //         <div style='display: flex;justify-content: center; align-center: center; margin: 10px'>
-        //         <button style="margin:10px">Add to cart</button>
-        //         <button class='clipboard' id='${item.buttonId}' style="margin:10px">Copy to clipboard</button>
-        //         </div>
-        //     `;
+            // Create the inner HTML string with properly escaped quotes
+            const innerHTML = `
+                <h2><b>Title:</b> ${item.title}</h2>
+                <p class='para'>${item.para}</p>
+                <img src='https://picsum.photos/200' style='width: 50px; height: 50px' style='text-align: center' />
+                <div style='display: flex;justify-content: center; align-center: center; margin: 10px'>
+                <button style="margin:10px">Add to cart</button>
+                <button class='clipboard' id='${item.buttonId}' style="margin:10px">Copy to clipboard</button>
+                </div>
+            `;
 
-        //     // Set the inner HTML of the div
-        //     div.innerHTML = innerHTML;
+            // Set the inner HTML of the div
+            div.innerHTML = innerHTML;
 
-        //     // Append the div to the document body
-        //     document.body.appendChild(div);
-        // });
+            // Append the div to the document body
+            document.body.appendChild(div);
+        });
 
-        // function handleClipboardClick(event) {
-        //     // Get the parent container of the clicked button
-        //     const container = event.target.closest('.box_section');
-        //     if (!container) return; // Exit if no container found
+        function handleClipboardClick(event) {
+            // Get the parent container of the clicked button
+            const container = event.target.closest('.box_section');
+            if (!container) return; // Exit if no container found
 
-        //     // Generate the iframe code
-        //     const iframeHTML = `<iframe srcdoc='${container.outerHTML}' style="width: 100%; height: 300px; border: 1px solid black;"></iframe>`;
+            // Generate the iframe code
+            const iframeHTML = `<iframe srcdoc='${container.outerHTML}' style="width: 100%; height: 300px; border: 1px solid black;"></iframe>`;
 
-        //     // Copy the iframe code to the clipboard
-        //     navigator.clipboard.writeText(iframeHTML)
-        //         .then(() => {
-        //             // Code copied successfully
-        //             console.log('Iframe code copied to clipboard:', iframeHTML);
-        //             // You can show a success message here if needed
-        //         })
-        //         .catch(err => {
-        //             // Unable to copy the code
-        //             console.error('Failed to copy iframe code to clipboard:', err);
-        //             // You can show an error message here if needed
-        //         });
-        // }
-
-        // // Attach event listener to clipboard buttons
-        // const clipboardButtons = document.querySelectorAll('.clipboard');
-        // clipboardButtons.forEach(button => {
-        //     button.addEventListener('click', handleClipboardClick);
-        // });
-         function generateEmbedCode(productId) {
-            // Replace this with your logic to generate embed code based on productId
-            const domainName = 'https://iframetest-ivory.vercel.app/';
-            const embedCode = `<iframe src="${domainName}#${productId}" width="100%" height="300" frameborder="0" allowfullscreen></iframe>`;
-            return embedCode;
+            // Copy the iframe code to the clipboard
+            navigator.clipboard.writeText(iframeHTML)
+                .then(() => {
+                    // Code copied successfully
+                    console.log('Iframe code copied to clipboard:', iframeHTML);
+                    // You can show a success message here if needed
+                })
+                .catch(err => {
+                    // Unable to copy the code
+                    console.error('Failed to copy iframe code to clipboard:', err);
+                    // You can show an error message here if needed
+                });
         }
 
-        // Add event listener to all embed buttons
-        const embedButtons = document.querySelectorAll('.embed-button');
-        embedButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                const productContainer = this.closest('.product');
-                if (productContainer) {
-                    const productId = productContainer.dataset.id;
-                    const embedCode = generateEmbedCode(productId);
-                    console.log('Embed Code:', embedCode);
-                    // You can use the embedCode as needed, such as displaying in a modal or copying to clipboard
-                }
-            });
+        // Attach event listener to clipboard buttons
+        const clipboardButtons = document.querySelectorAll('.clipboard');
+        clipboardButtons.forEach(button => {
+            button.addEventListener('click', handleClipboardClick);
         });
+        
     </script>
 </body>
 
