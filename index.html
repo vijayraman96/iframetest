@@ -139,7 +139,7 @@
          function generateEmbedCode(productId) {
             // Replace this with your logic to generate embed code based on productId
             const domainName = 'https://iframetest-ivory.vercel.app/';
-            const embedCode = `<iframe src="${domainName}${productId}" width="100%" height="300" frameborder="0" allowfullscreen></iframe>`;
+            const embedCode = `<iframe src="${domainName}#${productId}" width="100%" height="300" frameborder="0" allowfullscreen></iframe>`;
             return embedCode;
         }
 
